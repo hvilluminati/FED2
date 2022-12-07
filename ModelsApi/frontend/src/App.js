@@ -14,7 +14,7 @@ import AddManager from './pages/AddManager';
 import jwtDecode from 'jwt-decode';
 
 function App() {
-  const [type, setType] = useState('none');
+  // setBaseUrl('https://localhost:7181/api/');
 
   useEffect(() => {
     var jwt = localStorage.getItem('jwt');
