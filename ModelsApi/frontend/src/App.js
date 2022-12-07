@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Login from './pages/loginPage';
 import Welcome from './pages/welcomePage';
+import Jobs from './pages/jobListPage';
 import AddExpense from './pages/AddExpensePage';
-import AddModelToJob from './pages/AddModelToJob';
+import ChangeModelOnJob from './pages/ChangeModelOnJob';
+import CreateJob from './pages/CreateJob';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { setBaseUrl } from './Services/api';
@@ -11,6 +13,8 @@ import jwtDecode from 'jwt-decode';
 
 function App() {
 	setBaseUrl('https://localhost:7181/api/');
+
+	const [type, setType] = useState('none');
 
 	useEffect(() => {
 		var jwt = localStorage.getItem('jwt');
@@ -28,6 +32,8 @@ function App() {
 				)}
 				{<Route path='expense' element={<AddExpense />} />}
 				<Route path='/addmanager' element={<AddManager />} />
+				<Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} />
+				<Route path='CreateJob' element={<CreateJob />} />
 			</Routes>
 		</BrowserRouter>
 	);
