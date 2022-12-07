@@ -28,6 +28,7 @@ export default function JobList() {
 			expense = document.getElementById('expense').value;
 			expenseList.push(expense);
 
+		const current = new Date();
 			date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
 
@@ -43,11 +44,11 @@ export default function JobList() {
 			<h1>Job List</h1>
 			<div id='jobTitle' className='jobPage' column='1'> Jobs </div>
 			<ul>
-				{list.map((item, i) => { <li key={i}> {item} </li> })}
+				{job.map((item, i) => { <li key={i}> {item} </li> })}
 			</ul>
 			<div id='expenseTitle' className='jobPage' column='1'> Expenses </div>
 			<ul>
-				{list.map((list, i) => { <li key={i}> {list} </li> })}
+				{expense.map((list, i) => { <li key={i}> {list} </li> })}
 			</ul>
 			<textarea id='expense' className='expenseText' rows='1' > Add expense</textarea>
 			<textarea id='job' className='jobText' rows='1' > Add job you want to add expense to</textarea>
