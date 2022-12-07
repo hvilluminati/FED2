@@ -1,6 +1,5 @@
 ﻿import { useState, useEffect } from 'react';
 import { axiosCreateExpense } from '../axioscalls';
-import { axiosGetJobs } from '../axioscalls';
 
 export default function AddExpense() {
   const [expense, setExpense] = useState();
@@ -9,14 +8,8 @@ export default function AddExpense() {
   const [modelID, setModelID] = useState();
   const [date, setDate] = useState();
 
-  var expenseList = axiosGetJobs();
-
   function handleExpenseClick() {
-    var expense2 = setExpense;
-    expense = document.getElementById('expense').value;
-    expenseList.push(expense);
-
-    setDate = new Date(2022, 5, 1);
+    setDate = new Date().getDate;
 
     axiosCreateExpense(modelID, jobID, date, text, expense).then((resp) => {
       console.log(resp);
