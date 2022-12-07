@@ -26,28 +26,28 @@ export default function AddManager() {
 			<text>First name</text>
 			<textarea
 				id='_firstName'
-				className='firstNameText'
+				className='signInText'
 				rows='1'
 				onChange={(event) => setFirstName(event.target.value)}
 			/>
 			<text>Last name</text>
 			<textarea
 				id='_lastName'
-				className='lastNameText'
+				className='signInText'
 				rows='1'
 				onChange={(event) => setLastName(event.target.value)}
 			/>
 			<text>Email</text>
 			<textarea
 				id='_email'
-				className='emailText'
+				className='signInText'
 				rows='1'
 				onChange={(event) => setEmail(event.target.value)}
 			/>
 			<text>Password</text>
 			<textarea
 				id='_password'
-				className='passwordText'
+				className='signInText'
 				rows='1'
 				onChange={(event) => setPassword(event.target.value)}
 			/>
