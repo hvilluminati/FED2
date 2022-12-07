@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from 'react';
 import { axiosCreateExpense } from '../axioscalls';
+import jwtDecode from 'jwt-decode';
 
 export default function AddExpense() {
   const [expense, setExpense] = useState();
@@ -25,7 +26,7 @@ export default function AddExpense() {
   return (
     <div id='page'>
       <h1>Add expenses</h1>
-      <div id='expenseTitle' className='jobPage' column='1'>
+      <div id='expenseTitle' className='expensePage' column='1'>
         {' '}
         Expenses{' '}
       </div>
