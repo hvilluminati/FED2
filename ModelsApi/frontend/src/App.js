@@ -8,19 +8,19 @@ import { useState } from 'react';
 import jwtDecode from 'jwt-decode';
 
 function App() {
-	const [type, setType] = useState('none');
-
 	useEffect(() => {
 		var jwt = localStorage.getItem('jwt');
 		var decoded = jwtDecode(jwt);
 
-		setType(Object.values(decoded)[1]);
+		localStorage.setItem('type', Object.values(decoded)[1]);
 	}, []);
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Login func={setType} />} />
-				<Route path='welcome' element={<Welcome />} />
+				<Route path='/' element={<Login />} />
+				{localStorage.getItem('type') !== 'none' && (
+					<Route path='welcome' element={<Welcome />} />
+				)}
 				{/* <Route path='jobs' element={<Jobs />} /> */}
 			</Routes>
 		</BrowserRouter>
