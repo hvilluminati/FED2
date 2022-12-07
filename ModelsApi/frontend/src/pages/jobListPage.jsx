@@ -8,7 +8,7 @@ export default function JobList() {
   const [modelID, setModelID] = useState();
   const [date, setDate] = useState();
 
-  function handleClick() {
+  function handleExpenseClick() {
     var expenseList = [{}];
     var expense2 = setExpense;
     expense = document.getElementById('expense').value;
@@ -63,7 +63,7 @@ export default function JobList() {
         {' '}
         Add job you want to add expense to
       </textarea>
-      <button onClick={handleClick} id='expenseBtn'>
+      <button onClick={handleExpenseClick} id='expenseBtn'>
         Add expense
       </button>
     </div>
