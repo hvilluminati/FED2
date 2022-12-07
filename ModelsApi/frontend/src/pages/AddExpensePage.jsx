@@ -25,41 +25,38 @@ export default function AddExpense() {
 
   return (
     <div id='page'>
-      <h1>Add expenses</h1>
-      <div id='expenseTitle' className='expensePage' column='1'>
-        {' '}
-        Expenses{' '}
+      <h1>Add Expenses</h1>
+      <div id='expenseTitle' className='expensePage'>
+        Expenses
       </div>
-      <ul>
-        {expense.map((list, i) => {
-          <li key={i}> {list} </li>;
-        })}
-      </ul>
       <textarea
         id='expense'
-        className='expenseText'
+        className='signInText'
         rows='1'
         onChange={(event) => setExpense(event.target.value)}
       >
-        {' '}
-        Add expense
+        Add expense Value
       </textarea>
+      <div id='jobTitle' className='jobPage'>
+        Job text
+      </div>
       <textarea
         id='text'
-        className='jobText'
+        className='signInText'
         rows='1'
         onChange={(event) => setText(event.target.value)}
       >
-        {' '}
-        Add text to the expense
+        Add text
       </textarea>
+      <div id='jobIDTitle' className='jobIDPage'>
+        Job ID
+      </div>
       <textarea
         id='jobID'
-        className='jobIDClass'
+        className='signInText'
         rows='1'
         onChange={(event) => setJobID(event.target.value)}
       >
-        {' '}
         Add the JobID
       </textarea>
       <button onClick={handleExpenseClick} id='expenseBtn'>
