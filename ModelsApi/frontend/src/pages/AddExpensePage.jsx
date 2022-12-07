@@ -11,6 +11,12 @@ export default function AddExpense() {
   function handleExpenseClick() {
     setDate = new Date().getDate;
 
+    var jwt = localStorage.getItem('jwt');
+    if (jwt !== null) {
+      var decoded = jwtDecode(jwt);
+      setModelID(Object.values(decoded)[2]);
+    }
+
     axiosCreateExpense(modelID, jobID, date, text, expense).then((resp) => {
       console.log(resp);
     });
