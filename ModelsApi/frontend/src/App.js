@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Login from './pages/loginPage';
 import Welcome from './pages/welcomePage';
 import Jobs from './pages/JobListPage';
-import AddExpense from './pages/AddExpensePage';
-import ChangeModelOnJob from './pages/ChangeModelOnJob';
-import CreateJob from './pages/CreateJob';
+import AddModelToJob from './pages/ChangeModelOnJob';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { setBaseUrl } from './Services/api';
-import { AddManager } from './pages/addManager';
+import { useState } from 'react';
+import AddManager from './pages/AddManager';
 import jwtDecode from 'jwt-decode';
 
 function App() {
