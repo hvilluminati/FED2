@@ -1,14 +1,24 @@
 import { useState, useEffect } from 'react';
 import { axiosLogin } from '../axioscalls';
+import { useNavigate } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 
 export default function Login() {
 	const [username, setUsername] = useState();
 	const [password, setPassword] = useState();
 
-	function login() {
-		axiosLogin(username, password).then((resp) => {
+	async function login(func) {
+		await axiosLogin(username, password).then((resp) => {
+			// localStorage.clear();
 			localStorage.setItem(resp.data.key, resp.data.value);
+			console.log(resp.data.key, resp.data.value);
 		});
+		// var jwt = localStorage.getItem('jwt');
+		// var decoded = jwtDecode(jwt);
+
+		// console.log(decoded);
+
+		// useNavigate('welcome');
 
 		console.log(username, password);
 	}
