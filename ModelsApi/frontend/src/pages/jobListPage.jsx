@@ -19,9 +19,7 @@ export default function JobList() {
       current.getMonth() + 1
     }/${current.getFullYear()}`;
 
-    axiosCreateExpense(modelID, jobID, date, job, expense).then((resp) => {
-      localStorage.setItem(resp.data.key, resp.data.value);
-    });
+    axiosCreateExpense(modelID, jobID, date, job, expense);
   }
 
   return (
