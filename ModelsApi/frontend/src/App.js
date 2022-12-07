@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import Login from './pages/loginPage';
 import Welcome from './pages/welcomePage';
-import Jobs from './pages/JobListPage';
-import AddModelToJob from './pages/ChangeModelOnJob';
+import AddExpense from './pages/AddExpensePage';
+import ChangeModelOnJob from './pages/ChangeModelOnJob';
+import CreateJob from './pages/CreateJob';
+import JobList from './pages/jobListPage';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
@@ -23,11 +25,14 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Login />} />
-				<Route path='welcome' element={<Welcome />} />
-				{/* <Route path='expense' element={<AddExpense />} /> */}
-				{/* <Route path='addmanager' element={<AddManager />} /> */}
-				{/* <Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} /> */}
-				{/* <Route path='CreateJob' element={<CreateJob />} /> */}
+				{localStorage.getItem('type') !== 'none' && (
+					<Route path='welcome' element={<Welcome />} />
+				)}
+				<Route path='expense' element={<AddExpense />} />
+				<Route path='addmanager' element={<AddManager />} />
+				<Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} />
+				<Route path='CreateJob' element={<CreateJob />} />
+				<Route path='JobList' element={<JobList />} />
 			</Routes>
 		</BrowserRouter>
 	);

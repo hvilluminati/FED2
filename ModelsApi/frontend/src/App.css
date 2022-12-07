@@ -1,33 +1,87 @@
 #root {
-	height: 100vh;
-	width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 div {
-	display: flex;
+  display: flex;
 }
 
 /*  #region loginPage */
 
 #page {
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .signInText {
-	height: 20px;
-	width: 200px;
-	resize: none;
-	margin: 10px 0;
-	border-radius: 5px;
-	font-size: 16px;
+  height: 20px;
+  width: 200px;
+  resize: none;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 #login {
-	margin-top: 15px;
+  margin-top: 15px;
+}
+#jobListHeader {
+  margin-bottom: 30%;
+}
+
+#commentList {
+  position: absolute;
+  margin-left: 0%;
+}
+#locationList {
+  position: absolute;
+  margin-left: -50%;
+}
+#daysList {
+  position: absolute;
+  margin-left: 80%;
+}
+#startDateList {
+  position: absolute;
+  margin-left: 50%;
+}
+#customerList {
+  position: absolute;
+  margin-left: -80%;
+}
+#Customer {
+  position: absolute;
+  margin-left: -80%;
+  margin-bottom: 10%;
+}
+#startDate {
+  position: absolute;
+  margin-left: 50%;
+  margin-bottom: 10%;
+}
+#days {
+  position: absolute;
+  margin-left: 80%;
+  margin-bottom: 10%;
+}
+#location {
+  position: absolute;
+  margin-left: -50%;
+  margin-bottom: 10%;
+}
+#comment {
+  position: absolute;
+  margin-left: 0%;
+  margin-bottom: 10%;
 }
 
 /*  #endregion  */
+/*	#region	CreateNodel	*/
+#createModelPage {
+  flex-direction: column;
+}
+/*	#endregion	*/

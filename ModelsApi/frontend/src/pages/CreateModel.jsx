@@ -46,7 +46,7 @@ export default function CreateJobs() {
   }
 
   return (
-    <div id='page'>
+    <div id='createModelPage'>
       <h1>Create a new Job</h1>
       <text>First Name</text>
       <textarea
