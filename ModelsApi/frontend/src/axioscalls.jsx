@@ -141,14 +141,7 @@ export function axiosCreateExpense(modelId, jobId, date, text, amount) {
 }
 export function axiosDeleteModelFromJob(modelID, jobID) {
   return axiosInstance
-    .delete(
-      `Jobs/${jobID}/model/${modelID}`,
-      {
-        modelId: modelID,
-        jobId: jobID,
-      },
-      config
-    )
+    .delete(`Jobs/${jobID}/model/${modelID}`, config)
     .then((resp) => {
       return resp;
     })

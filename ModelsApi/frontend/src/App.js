@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Login from './pages/loginPage';
 import Welcome from './pages/welcomePage';
+import Jobs from './pages/jobListPage';
 import AddExpense from './pages/AddExpensePage';
-import AddModelToJob from './pages/AddModelToJob';
+import ChangeModelOnJob from './pages/ChangeModelOnJob';
+import CreateJob from './pages/CreateJob';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
@@ -31,6 +33,8 @@ function App() {
         )}
         {<Route path='expense' element={<AddExpense />} />}
         <Route path='/addmanager' element={<AddManager />} />
+        <Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} />
+        <Route path='CreateJob' element={<CreateJob />} />
       </Routes>
     </BrowserRouter>
   );

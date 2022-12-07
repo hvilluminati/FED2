@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { axiosAddModelToJob } from '../axioscalls';
+import { axiosAddModelToJob, axiosDeleteModelFromJob } from '../axioscalls';
 import { useNavigate } from 'react-router-dom';
 
-export default function AddModelToJob() {
+export default function ChangeModelsOnJobs() {
   const [modelId, setModelId] = useState();
   const [jobId, setJobId] = useState();
 
@@ -10,19 +10,24 @@ export default function AddModelToJob() {
     axiosAddModelToJob(modelId, jobId).then((resp) => {
       console.log(resp);
     });
-
-    console.log(jobId, modelId);
+  }
+  function RemoveModelFromJob() {
+    axiosDeleteModelFromJob(modelId, jobId).then((resp) => {
+      console.log(resp);
+    });
   }
 
   return (
     <div id='page'>
       <h1>Add Model to job</h1>
+      <text>Model ID</text>
       <textarea
         id='ModelID'
         className='signInText'
         rows='1'
         onChange={(event) => setModelId(event.target.value)}
       />
+      <text>Job ID</text>
       <textarea
         id='JobID'
         className='signInText'
@@ -31,6 +36,9 @@ export default function AddModelToJob() {
       />
       <button id='Add' onClick={AddModelToJob}>
         Add Model
+      </button>
+      <button id='Remove' onClick={RemoveModelFromJob}>
+        Delete Model
       </button>
     </div>
   );
