@@ -8,17 +8,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 function App() {
-	const [type, setType] = useState('none');
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<Login func={setType} />} />
-				<Route path='welcome' element={<Welcome />} />
-				<Route path='jobs' element={<Jobs />} />
-				<Route path='AddModelToJob' element{<AddModelToJob />}></Route>
-			</Routes>
-		</BrowserRouter>
-	);
+  const [type, setType] = useState('none');
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login func={setType} />} />
+        <Route path='welcome' element={<Welcome />} />
+        <Route path='jobs' element={<Jobs />} />
+        <Route path='AddModelToJob' element={<AddModelToJob />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
