@@ -29,7 +29,7 @@ function App() {
         {localStorage.getItem('type') !== 'none' && (
           <Route path='welcome' element={<Welcome />} />
         )}
-        {/* <Route path='jobs' element={<Jobs />} /> */}
+        {<Route path='expense' element={<AddExpense />} />}
         <Route path='/addmanager' element={<AddManager />} />
       </Routes>
     </BrowserRouter>
