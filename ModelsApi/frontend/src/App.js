@@ -31,7 +31,7 @@ function App() {
           <Route path='welcome' element={<Welcome />} />
         )}
         {<Route path='expense' element={<AddExpense />} />}
-        <Route path='/addmanager' element={<AddManager />} />
+        <Route path='addmanager' element={<AddManager />} />
         <Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} />
         <Route path='CreateJob' element={<CreateJob />} />
       </Routes>
