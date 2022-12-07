@@ -1,41 +1,30 @@
 ﻿import { useState, useEffect } from 'react';
 import { axiosCreateExpense } from '../axioscalls';
 
-export default function JobList() {
+export default function AddExpense() {
   const [expense, setExpense] = useState();
-  const [job, setJob] = useState();
+  const [text, setText] = useState();
   const [jobID, setJobID] = useState();
   const [modelID, setModelID] = useState();
   const [date, setDate] = useState();
 
   function handleExpenseClick() {
-    var expenseList = [{}];
-    var expense2 = setExpense;
-    expense = document.getElementById('expense').value;
-    expenseList.push(expense);
+    setDate = new Date().getDate;
 
-    const current = new Date();
-    date = `${current.getDate()}/${
-      current.getMonth() + 1
-    }/${current.getFullYear()}`;
+    var jwt = localStorage.getItem('jwt');
+    if (jwt !== null) {
+      var decoded = jwtDecode(jwt);
+      setModelID(Object.values(decoded)[2]);
+    }
 
-    axiosCreateExpense(modelID, jobID, date, job, expense).then((resp) => {
-      localStorage.setItem(resp.data.key, resp.data.value);
+    axiosCreateExpense(modelID, jobID, date, text, expense).then((resp) => {
+      console.log(resp);
     });
   }
 
   return (
-    <div id='jobListPage'>
-      <h1>Job List</h1>
-      <div id='jobTitle' className='jobPage' column='1'>
-        {' '}
-        Jobs{' '}
-      </div>
-      <ul>
-        {job.map((item, i) => {
-          <li key={i}> {item} </li>;
-        })}
-      </ul>
+    <div id='page'>
+      <h1>Add expenses</h1>
       <div id='expenseTitle' className='jobPage' column='1'>
         {' '}
         Expenses{' '}
@@ -55,13 +44,22 @@ export default function JobList() {
         Add expense
       </textarea>
       <textarea
-        id='job'
+        id='text'
         className='jobText'
         rows='1'
-        onChange={(event) => setJob(event.target.value)}
+        onChange={(event) => setText(event.target.value)}
       >
         {' '}
-        Add job you want to add expense to
+        Add text to the expense
+      </textarea>
+      <textarea
+        id='jobID'
+        className='jobIDClass'
+        rows='1'
+        onChange={(event) => setJobID(event.target.value)}
+      >
+        {' '}
+        Add the JobID
       </textarea>
       <button onClick={handleExpenseClick} id='expenseBtn'>
         Add expense
