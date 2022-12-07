@@ -5,15 +5,12 @@ import AddExpense from './pages/AddExpensePage';
 import AddModelToJob from './pages/AddModelToJob';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import { setBaseUrl } from './Services/api';
 import { AddManager } from './pages/addManager';
 import jwtDecode from 'jwt-decode';
 
 function App() {
 	setBaseUrl('https://localhost:7181/api/');
-
-	const [type, setType] = useState('none');
 
 	useEffect(() => {
 		var jwt = localStorage.getItem('jwt');
