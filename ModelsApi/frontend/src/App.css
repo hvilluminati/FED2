@@ -80,3 +80,8 @@ div {
 }
 
 /*  #endregion  */
+/*	#region	CreateNodel	*/
+#createModelPage {
+  flex-direction: column;
+}
+/*	#endregion	*/

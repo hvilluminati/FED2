@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Login from './pages/loginPage';
 import Welcome from './pages/welcomePage';
 import AddExpense from './pages/AddExpensePage';
@@ -13,8 +13,6 @@ import jwtDecode from 'jwt-decode';
 
 function App() {
   // setBaseUrl('https://localhost:7181/api/');
-
-  const [type, setType] = useState('none');
 
   useEffect(() => {
     var jwt = localStorage.getItem('jwt');
