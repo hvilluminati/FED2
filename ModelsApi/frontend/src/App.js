@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Login from './pages/loginPage';
 import Welcome from './pages/welcomePage';
 //import Jobs from './pages/jobListPage';
@@ -9,8 +9,8 @@ import CreateModel from './pages/CreateModel';
 
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { setBaseUrl } from './Services/api';
-import { AddManager } from './pages/addManager';
+import { useState } from 'react';
+import AddManager from './pages/AddManager';
 import jwtDecode from 'jwt-decode';
 
 function App() {
@@ -34,7 +34,6 @@ function App() {
         <Route path='/addmanager' element={<AddManager />} />
         <Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} />
         <Route path='CreateJob' element={<CreateJob />} />
-        <Route path='CreateModel' element={<CreateModel />} />
       </Routes>
     </BrowserRouter>
   );
