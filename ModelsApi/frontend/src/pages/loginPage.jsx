@@ -11,8 +11,8 @@ export default function Login(func) {
 	async function login() {
 		await axiosLogin(username, password).then((resp) => {
 			localStorage.setItem('jwt', resp.data.jwt);
-			// var decoded = jwtDecode(resp.data.jwt);
-			// localStorage.setItem('type', Object.values(decoded)[1]);
+			var decoded = jwtDecode(resp.data.jwt);
+			localStorage.setItem('type', Object.values(decoded)[1]);
 		});
 
 		nav('/welcome');
