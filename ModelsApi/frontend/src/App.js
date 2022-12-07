@@ -11,9 +11,10 @@ import jwtDecode from 'jwt-decode';
 function App() {
 	useEffect(() => {
 		var jwt = localStorage.getItem('jwt');
-		var decoded = jwtDecode(jwt);
-
-		localStorage.setItem('type', Object.values(decoded)[1]);
+		if (jwt !== null) {
+			var decoded = jwtDecode(jwt);
+			localStorage.setItem('type', Object.values(decoded)[1]);
+		}
 	}, []);
 	return (
 		<BrowserRouter>
