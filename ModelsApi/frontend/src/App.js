@@ -6,7 +6,7 @@ import AddModelToJob from './pages/ChangeModelOnJob';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import AddManager from './pages/AddManager';
+import AddManager from './pages/addManager';
 import jwtDecode from 'jwt-decode';
 
 function App() {
@@ -24,10 +24,10 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Login />} />
 				<Route path='welcome' element={<Welcome />} />
-				<Route path='expense' element={<AddExpense />} />
+				{/* <Route path='expense' element={<AddExpense />} /> */}
 				{/* <Route path='addmanager' element={<AddManager />} /> */}
-				<Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} />
-				<Route path='CreateJob' element={<CreateJob />} />
+				{/* <Route path='ChangeModelOnJob' element={<ChangeModelOnJob />} /> */}
+				{/* <Route path='CreateJob' element={<CreateJob />} /> */}
 			</Routes>
 		</BrowserRouter>
 	);
