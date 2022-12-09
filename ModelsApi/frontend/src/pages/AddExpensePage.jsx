@@ -2,6 +2,7 @@
 import { axiosCreateExpense } from '../axioscalls';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function AddExpense() {
 	const [expense, setExpense] = useState();

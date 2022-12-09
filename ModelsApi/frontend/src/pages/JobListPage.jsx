@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { axiosGetJobs } from '../axioscalls';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function JobList() {
 	const [listJob, setListJob] = useState();
@@ -16,6 +17,11 @@ export default function JobList() {
 
 	return (
 		<div id='page'>
+			<Link to='/welcome'>
+				<button className='button button1'>
+					<span>Back</span>
+				</button>{' '}
+			</Link>
 			<h1 id='jobListHeader'>List of Jobs</h1>
 			<h2>If wrong data is shown refresh page</h2>
 			<div id='Customer'>Customer</div>
