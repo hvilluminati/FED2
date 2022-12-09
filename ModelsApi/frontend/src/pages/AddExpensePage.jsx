@@ -41,9 +41,8 @@ export default function AddExpense() {
 				id='expense'
 				className='signInText'
 				rows='1'
-				onChange={(event) => setExpense(event.target.value)}>
-				Add expense Value
-			</textarea>
+				onChange={(event) => setExpense(event.target.value)}
+				placeholder='Add expense value'></textarea>
 			<div id='jobTitle' className='jobPage'>
 				Job text
 			</div>
@@ -51,9 +50,8 @@ export default function AddExpense() {
 				id='text'
 				className='signInText'
 				rows='1'
-				onChange={(event) => setText(event.target.value)}>
-				Add text
-			</textarea>
+				onChange={(event) => setText(event.target.value)}
+				placeholder='Add text'></textarea>
 			<div id='jobIDTitle' className='jobIDPage'>
 				Job ID
 			</div>
@@ -61,9 +59,8 @@ export default function AddExpense() {
 				id='jobID'
 				className='signInText'
 				rows='1'
-				onChange={(event) => setJobID(event.target.value)}>
-				Add the JobID
-			</textarea>
+				onChange={(event) => setJobID(event.target.value)}
+				placeholder='Add the JobID'></textarea>
 			<button onClick={handleExpenseClick} id='expenseBtn'>
 				Add expense
 			</button>

@@ -17,6 +17,7 @@ export default function JobList() {
 	return (
 		<div id='page'>
 			<h1 id='jobListHeader'>List of Jobs</h1>
+			<h2>If wrong data is shown refresh page</h2>
 			<div id='Customer'>Customer</div>
 			<div id='startDate'>Start Date</div>
 			<div id='days'>Days</div>
